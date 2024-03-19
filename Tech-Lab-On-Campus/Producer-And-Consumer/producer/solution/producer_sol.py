@@ -1,7 +1,8 @@
+from producer_interface import mqProducerInterface
 import pika
 import os
 
-class myProducer(myProducerInterface):
+class mqProducer(mqProducerInterface):
         rk = ""
         en = ""
         def __init__(self, routing_key: str, exchange_name: str) -> None:
@@ -23,3 +24,4 @@ class myProducer(myProducerInterface):
             )
             channel.close()
             connection.close()
+
